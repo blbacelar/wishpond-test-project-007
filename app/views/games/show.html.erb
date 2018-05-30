@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @game.description %>
+</p>
+
+<% if @game.images.attached? %>
+  <p>
+    <strong>Images:</strong>
+    <br>
+    <% @game.images.each do |image| %>
+      <%#= image_tag(image) %>
+      <%= image_tag image.variant(resize: "100x100") %>
+    <% end %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', games_path %>
