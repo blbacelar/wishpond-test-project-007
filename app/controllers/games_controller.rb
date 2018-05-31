@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  before_action :set_post, only: [:show, :destroy]
+  before_action :set_post, only: [:destroy]
 
   def index
     @games = Game.all
@@ -13,7 +13,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(post_params)
     if @game.save
-      redirect_to @game
+      redirect_to new_play_path
     else
       render :new
     end

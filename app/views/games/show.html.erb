@@ -10,7 +10,7 @@
     <strong>Images:</strong>
     <br>
     <% @game.images.each do |image| %>
-      <%#= image_tag(image) %>
+      <h1> <% rails_blob_url(image) %></h1>
       <%= image_tag image.variant(resize: "100x100") %>
     <% end %>
   </p>
