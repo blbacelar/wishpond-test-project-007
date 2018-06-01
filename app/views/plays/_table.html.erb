@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Tick</td>
+    <th scope="col">Image in the array</td>
+  </tr>
+  </thead>
+  <tbody>
+  <% Play.all.each do |play| %>
+    <% imgIndex = play.image_index %>
+    <% image = Game.last.images[imgIndex] %>
+    <tr>
+      <td><%= play.current_time %></td>
+      <td><%= image_tag image.variant(resize: "100x100") %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

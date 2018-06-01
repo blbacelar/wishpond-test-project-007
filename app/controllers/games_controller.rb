@@ -1,32 +1,25 @@
 class GamesController < ApplicationController
   before_action :set_post, only: [:destroy]
 
-  def index
-    @games = Game.all
-    @game = Game.new
-  end
-
   def new
+    if Game.nil?
+      Game.first.destroy
+    end
+
     @game = Game.new
   end
 
   def create
     @game = Game.new(post_params)
     if @game.save
+
+
+      # It always destroy the previous plays
+      Play.destroy_all
+
       redirect_to new_play_path
     else
       render :new
-    end
-  end
-
-  def show
-    @game = Game.find(params[:id])
-  end
-
-  def destroy
-    @game.destroy
-    respond_to do |format|
-      format.html { redirect_to games_url, notice: 'Game was successfully destroyed.' }
     end
   end
 

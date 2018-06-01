@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   post 'plays/save_my_play', to: 'plays#save_my_play'
 
-  root 'games#index'
+  root 'games#new'
 end
