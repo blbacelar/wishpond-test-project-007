@@ -9,11 +9,14 @@ database table named "plays".
 
 Rails version 5.2
 
+### Note
+
+To handle files upload it is being used Active storage.
+
 ## Getting Started
 
 You can clone the project using this link [GitHub Repo](git@github.com:blbacelar/wishpond-test-project-007.git)
 
-To handle files upload it is being used Active storage.
 
 After cloning the project you should run ```bundle install```. It will install all regular gems and:
 * **mini_magick** (Manipulate images with minimal use of memory)
