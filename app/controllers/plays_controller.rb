@@ -43,6 +43,8 @@ class PlaysController < ApplicationController
     play.image_index = @array_images.index(@array_images.sample)
     play.save
 
+    @plays = Play.all
+
     respond_to do |format|
       format.js
       format.html { redirect_to new_play_path }

@@ -6,7 +6,7 @@
   </tr>
   </thead>
   <tbody>
-  <% Play.all.each do |play| %>
+  <% @plays.each do |play| %>
     <% imgIndex = play.image_index %>
     <% image = Game.last.images[imgIndex] %>
     <tr>
